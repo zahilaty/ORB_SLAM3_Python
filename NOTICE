@@ -1,0 +1,24 @@
+ORB-SLAM3 Python reimplementation
+
+Derived from ORB-SLAM3 revision
+4452a3c4ab75b1cde34e5505a36ec3f9edcdc4c4.
+
+Copyright (C) 2017-2021 Carlos Campos, Richard Elvira, Juan J. Gómez Rodríguez,
+José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós,
+University of Zaragoza.
+
+This derivative is distributed under the GNU General Public License,
+version 3 or (at your option) any later version. See LICENSE.
+It comes WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+The ORB vocabulary is retained unchanged from the source distribution.
+Its SHA-256 and source revision are recorded in BASELINE.json.
+
+Retained or translated third-party components and their original notices
+are identified in THIRD_PARTY_NOTICES.md and licenses/.
+
+This is an independent Python translation, not an official release by the
+original authors. It contains documented numerical substitutions, repairs,
+and a sequential execution schedule. See COVERAGE.md.

@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "date": "2026-11-05",
+  "tests": {
+    "tests": 226,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 5,
+    "passed": 221,
+    "seconds": 200.781
+  },
+  "environment": {
+    "python": "3.11.18",
+    "numpy": "2.2.6",
+    "opencv": "4.12.0",
+    "scipy": "1.17.1"
+  },
+  "original_checkout_hidden": true,
+  "network_disabled": true,
+  "live_original_oracles_disabled": true,
+  "dedicated_environment": ".venv",
+  "vocabulary_sha256": "f8dd027f7a6cb88129821341194d7f2c75b77b3394257ddd0d2229863d1a3570",
+  "test_log": ".cache/verification/standalone.log",
+  "junit_xml": ".cache/verification/standalone.xml",
+  "whole_system_99_percent_fidelity_established": false,
+  "rendered_inertial_fast_init": true
+}

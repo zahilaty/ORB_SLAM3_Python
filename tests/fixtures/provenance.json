@@ -1,0 +1,32 @@
+{
+  "baseline_commit": "4452a3c4ab75b1cde34e5505a36ec3f9edcdc4c4",
+  "source_sha256": {
+    "src/ORBextractor.cc": "c63ba40006b94d23cf93fd832fd7a48af835ddf087fb5dcc7caf9692b397f576",
+    "include/ORBextractor.h": "0f6b92927ee8d4a69eaabdc9cbc473af5d61817a147f37ae97e2f6ac058388f9",
+    "Thirdparty/DBoW2/DBoW2/TemplatedVocabulary.h": "e74ba45e695eaa4a469001c66f61d076712ebd6fa7cc7b0ffad4bfc2ad8aa94b",
+    "Thirdparty/DBoW2/DBoW2/FORB.cpp": "e07667aa870c7776818833c1b6fe285527b455005beed7ce58826f240699ac03",
+    "Thirdparty/DBoW2/DBoW2/ScoringObject.cpp": "6de0c097cf24426d1abc2a186fa2b2f0008eceaae9e3e0022f2ac891529e6f8b",
+    "Vocabulary/ORBvoc.txt": "f8dd027f7a6cb88129821341194d7f2c75b77b3394257ddd0d2229863d1a3570"
+  },
+  "extractor_cpp.npz": {
+    "generator": "g++ -O2 C++17, original ORBextractor(1000,1.2f,8,20,7), original OpenCV 4.12.0",
+    "input": "uint8 grayscale PCG64 seed 1, 480x640; stored image is authoritative",
+    "output_features": 1004,
+    "python_shared_features": 1001,
+    "shared_descriptor_comparison": "all byte-identical; equal-count/equal-x std::sort ties explain 3 spatial differences"
+  },
+  "vocabulary_cpp.npz": {
+    "generator": "g++ -O2 original DBoW2 ORBVocabulary.loadFromTextFile and transform(descriptors,bow,nodes,4)",
+    "input": "1004 Python extracted descriptors from extractor test image; stored array is authoritative",
+    "word_count": 971814,
+    "cpp_reported_word_count": 971815,
+    "word_count_difference": "Original while(!eof()) parses an extra empty line after terminal newline using undefined/uninitialized fields; Python parses only actual rows.",
+    "nonzero_bow_words": 986,
+    "ancestor_groups": 99,
+    "maximum_weight_error": 4.336808689942018e-19
+  },
+  "fixture_sha256": {
+    "extractor_cpp.npz": "9b60d2faa75d2feb1ecf1c00dbaa25912ddda9035059b38ecdb7a13c61916b5d",
+    "vocabulary_cpp.npz": "e04f0a1ade51e9f4b96d6a8dca6699d72a4a0ffe906dba175b4def6edb32393f"
+  }
+}

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orbslam3-python"
+version = "0.1.0"
+description = "Readable, source-traced Python reimplementation of ORB-SLAM3 (in progress)"
+requires-python = ">=3.11"
+license = "GPL-3.0-or-later"
+dependencies = ["numpy>=1.26", "scipy>=1.13", "opencv-python-headless>=4.10,<5"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+visualization = ["matplotlib>=3.8"]
+
+[tool.setuptools.packages.find]
+include = ["orbslam3*"]
+
+[tool.setuptools.data-files]
+"share/orbslam3" = ["assets/ORBvoc.txt", "NOTICE", "THIRD_PARTY_NOTICES.md", "COVERAGE.md", "BASELINE.json"]
+"share/orbslam3/licenses" = ["licenses/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["reference: opt-in differential compilation against ORBSLAM3_REFERENCE"]

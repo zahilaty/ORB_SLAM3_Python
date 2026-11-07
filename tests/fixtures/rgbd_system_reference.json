@@ -1,0 +1,210 @@
+{
+  "provenance": {
+    "revision": "4452a3c4ab75b1cde34e5505a36ec3f9edcdc4c4",
+    "reference": "Actual original ORB_SLAM3::System::TrackRGBD on same generated image/depth frames; viewerfalse,LC enabled,50ms mapper wait after each trackingcall",
+    "renderer_sha256": "1e627079fd4b5d63d45a842b8bf9f931eb8677d028692fc32cbb3ddfa202dc6a",
+    "source_sha256": {
+      "src/Tracking.cc": "3a3654bcc675f859cce1f2fb28ab32a129e8d734d0ac3d55417ff8b47a013264",
+      "src/LocalMapping.cc": "6da465cd5b88b6278188935f7b9264d493dd88d3487a75bccf4614bd40c8a30e",
+      "src/Frame.cc": "67e0c446d9da80db11aceee4ff2664487cfe1f2502bc50d843ff7471917eb42e",
+      "src/ORBextractor.cc": "c63ba40006b94d23cf93fd832fd7a48af835ddf087fb5dcc7caf9692b397f576",
+      "src/ORBmatcher.cc": "ca66fed46590033c7a02e0e9452cfdb5348c41d691123655695c31ff3a681ab1",
+      "src/System.cc": "935dd45007a75d6750bb8c3b5c41f4edb91b7ef0b0944f655d4348955bbd168a"
+    },
+    "vocabulary_sha256": "f8dd027f7a6cb88129821341194d7f2c75b77b3394257ddd0d2229863d1a3570",
+    "image_sha256": [
+      "e1292ee74cda87451d1661f913cf351b884aac1297bc9da7c6756b0477214930",
+      "a4f7289f933599160ffa7d280193bef0a07c9c4b9041856e4b9677da11d55ee9",
+      "940e97ec2b21ac74b4c99ab88d64efac8b43c1a15f1e7442c292ec6cfaf082d3",
+      "37661f568130ba849d14b477a72c601a5b2e04df94666421b7dd64e9acccc68c",
+      "62fbe4dcdfeaffbe088219821ed3917747957e14919fb0511ae9429fcc174caa"
+    ],
+    "depth_meters_sha256": [
+      "c01b2bf1206913c89a462fbcdb3ada03d12c2fd7d7cb30a332c53d8a04e5893a",
+      "ee803476b1c59e3ea0a52aa926414eea2e40589da87adec5ad317e61bbce95a3",
+      "4502de42e8d6edf825c32087bc266caef42959a9c4ee6331817380b3cf350620",
+      "039d6bfc7beb2aba57835e195060cc9530e4131f1d47b5d5de36255324acc050",
+      "19c8a0d5d2bea139f5a9f5fa0150deb22996bc3949d620382afca764d1777210"
+    ],
+    "comparison": "Raw camera poses at tracking return; full asynchronous source map timing is not bit-exact. Original loopClosing:0 crashes in worker,so keepenabled for test."
+  },
+  "calibration": {
+    "fx": 260.0,
+    "fy": 260.0,
+    "cx": 160.0,
+    "cy": 120.0,
+    "width": 320,
+    "height": 240,
+    "baseline_fx": 26.0,
+    "depth_threshold": 4.0,
+    "frames_per_second": 20.0
+  },
+  "extractor": {
+    "nfeatures": 750,
+    "nlevels": 4,
+    "scale_factor": 1.2,
+    "initial_fast": 20,
+    "minimum_fast": 7
+  },
+  "times": [
+    0.0,
+    0.12,
+    0.24,
+    0.36,
+    0.48
+  ],
+  "states": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "features": [
+    754,
+    754,
+    754,
+    753,
+    754
+  ],
+  "matches": [
+    754,
+    353,
+    342,
+    549,
+    560
+  ],
+  "poses": [
+    [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        0.9999999403953552,
+        0.00021530839148908854,
+        0.0001510539004812017,
+        -0.03948767110705376
+      ],
+      [
+        -0.00021539436420425773,
+        0.9999998211860657,
+        0.0005694173742085695,
+        -0.0032320739701390266
+      ],
+      [
+        -0.0001509312860434875,
+        -0.0005694498540833592,
+        0.9999998211860657,
+        0.0015601898776367307
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        0.9999997019767761,
+        -0.00010962336818920448,
+        -0.0007515531615354121,
+        -0.07314404100179672
+      ],
+      [
+        0.00010923924128292128,
+        0.9999998807907104,
+        -0.0005111266509629786,
+        0.0021159525495022535
+      ],
+      [
+        0.000751609040889889,
+        0.0005110444617457688,
+        0.9999995827674866,
+        -0.0020667179487645626
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        0.9999999403953552,
+        -0.0002038613602053374,
+        -0.0002630671369843185,
+        -0.10896826535463333
+      ],
+      [
+        0.00020387922995723784,
+        1.0,
+        6.792956264689565e-05,
+        8.928091847337782e-05
+      ],
+      [
+        0.0002630532835610211,
+        -6.798318645451218e-05,
+        0.9999999403953552,
+        6.223064701771364e-05
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        0.9999997019767761,
+        4.996098505216651e-05,
+        0.0008070198819041252,
+        -0.1417022943496704
+      ],
+      [
+        -5.037028677179478e-05,
+        0.9999998807907104,
+        0.0005071642808616161,
+        -0.0015820675762370229
+      ],
+      [
+        -0.0008069943869486451,
+        -0.0005072047933936119,
+        0.9999995231628418,
+        0.0006770560867153108
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  ],
+  "settings": "%YAML:1.0\n\n#--------------------------------------------------------------------------------------------\n# Camera Parameters. Adjust them!\n#--------------------------------------------------------------------------------------------\nFile.version: \"1.0\"\n\nCamera.type: \"PinHole\"\n\n# Camera calibration and distortion parameters (OpenCV) \nCamera1.fx: 260.0\nCamera1.fy: 260.0\nCamera1.cx: 160.0\nCamera1.cy: 120.0\n\nCamera1.k1: 0.0\nCamera1.k2: 0.0\nCamera1.p1: 0.0\nCamera1.p2: 0.0\nCamera1.k3: 0.0\n\nCamera.width: 320\nCamera.height: 240\n\n# Camera frames per second \nCamera.fps: 20\n\n# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)\nCamera.RGB: 1\n\n# Close/Far threshold. Baseline times.\nStereo.ThDepth: 40.0\nStereo.b: 0.1\n\n# Depth map values factor\nRGBD.DepthMapFactor: 1000.0\n\n#--------------------------------------------------------------------------------------------\n# ORB Parameters\n#--------------------------------------------------------------------------------------------\n\n# ORB Extractor: Number of features per image\nORBextractor.nFeatures: 750\n\n# ORB Extractor: Scale factor between levels in the scale pyramid \t\nORBextractor.scaleFactor: 1.2\n\n# ORB Extractor: Number of levels in the scale pyramid\t\nORBextractor.nLevels: 4\n\n# ORB Extractor: Fast threshold\n# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.\n# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST\n# You can lower these values if your images have low contrast\t\t\t\nORBextractor.iniThFAST: 20\nORBextractor.minThFAST: 7\n\n#--------------------------------------------------------------------------------------------\n# Viewer Parameters\n#--------------------------------------------------------------------------------------------\nViewer.KeyFrameSize: 0.05\nViewer.KeyFrameLineWidth: 1.0\nViewer.GraphLineWidth: 0.9\nViewer.PointSize: 2.0\nViewer.CameraSize: 0.08\nViewer.CameraLineWidth: 3.0\nViewer.ViewpointX: 0.0\nViewer.ViewpointY: -0.7\nViewer.ViewpointZ: -1.8\nViewer.ViewpointF: 500.0\n\nloopClosing: 1\n"
+}

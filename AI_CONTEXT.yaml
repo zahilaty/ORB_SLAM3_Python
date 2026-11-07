@@ -1,0 +1,81 @@
+schema_version: 1
+updated_date: '2026-11-07'
+purpose: readable_source_based_python_reimplementation_of_ORB_SLAM3
+status: principal_subsystems_implemented_standalone_verified_fidelity_review_open
+requested_location: ~/Projects/ORB_SLAM3_Python
+standalone:
+  required: true
+  runtime_original_checkout_contact: forbidden
+  source_provenance: BASELINE.json
+  vocabulary: assets/ORBvoc.txt
+  vocabulary_sha256: f8dd027f7a6cb88129821341194d7f2c75b77b3394257ddd0d2229863d1a3570
+  vocabulary_version_control: gitignored_local_asset_required_for_runtime_and_tests
+  default_reference_tests: checked_in_golden_inputs_and_outputs
+  live_cpp_oracles: opt_in_ORBSLAM3_REFERENCE_only
+baseline:
+  commit: 4452a3c4ab75b1cde34e5505a36ec3f9edcdc4c4
+  authoritative: exact_local_source_plus_recorded_hashes
+  hash_manifest: BASELINE.json
+  user_task: TASK.md
+user_priorities:
+  order: [algorithmic_fidelity, readability_simplicity_conciseness, functional_correctness, efficiency]
+  simplify: architecture_not_algorithm
+  target_fidelity: approximately_99_percent_not_yet_established
+  excluded: [published_dataset_loaders, ROS, original_examples, Pangolin, native_ORB_SLAM3_wrappers, GTSAM]
+environment:
+  directory: .venv
+  manager: conda
+  independent_of_original_environment: true
+  python: '3.11.18'
+  tested_packages: requirements.lock.txt
+  numpy: '2.2.6'
+  opencv: '4.12.0.88_headless'
+  scipy: '1.17.1'
+  recreate: bash_tools_setup_environment_sh
+entrypoints:
+  api: orbslam3.SLAM.process_FrameInput
+  example: main.py_home_relative_DJI_0690_monocular_video_640px_max_side_guessed_intrinsics
+  modes: [MONOCULAR, STEREO, RGBD, MONOCULAR_IMU, STEREO_IMU, RGBD_IMU]
+  cameras: [Pinhole, KannalaBrandt8]
+  test: .venv/bin/python_-m_pytest_-q
+  support: [orbslam3/input.py, orbslam3/system.py, orbslam3/visualization.py, orbslam3/export.py]
+  coverage: COVERAGE.md
+conventions:
+  pose: T_cw_world_to_camera
+  visual_se3_tangent: rotation_then_translation_left_increment
+  inertial_pose: R_wb_p_wb_body_to_world_right_rotation_body_translation_increment
+  T_body_camera: camera_to_IMU_body
+  T_right_left: left_to_right_camera
+  depth: camera_z_metres
+  time: seconds_strictly_increasing_synchronized
+  imu: acceleration_m_per_s2_and_angular_velocity_rad_per_s
+  bias_optimization_order: gyro_then_accelerometer
+implementation:
+  core_modules: [features, matching, vocabulary, camera, geometry, initialization, map, tracking, mapping, optimization, imu, inertial_optimization, inertial_mapping, sim3_solver, pnp, loop_geometry, loop_closing, merging]
+  processing_boundary: tracking_then_queued_keyframe_mapping_then_loop_closing
+  global_BA: synchronous_commit
+  optimizer: visible_NumPy_SciPy_factor_graphs_g2o_style_LM_or_GN_and_landmark_Schur_elimination
+  localization_only: visual_modes_source_inertial_branch_is_TODO
+  source_quirks_and_repairs: COVERAGE.md_and_docs_audits
+verification:
+  standalone_suite: {passed: 221, skipped: 5, failed: 0, seconds: 200.781}
+  video_main_smoke: 12_DJI_frames_at_640x360_completed_no_pose_before_initialization
+  cpp_oracles: [ORB_extractor, DBoW2_vocabulary, camera_geometry, two_view_scores_and_initialization, pose_optimization, visual_LBA, MLPnP, Sim3_refinement, IMU_preintegration, RGBD_System]
+  rgbd_System_comparison: 5_generated_frames_exact_feature_counts_camera_centres_within_0_13_mm
+  visual_LBA_comparison: 806_landmarks_original_g2o_pose_max_difference_1_7e_minus8
+  rendered_visual_modes: 3
+  rendered_inertial_modes: all_3_through_10_keyframe_initialization_full_VI_BA_and_postinit_tracking
+  rendered_inertial_fast_init: true_source_option_bypasses_initial_depth_mode_acceleration_gate
+  inertial_metric_position_error: below_0_08_m_over_approximately_1_m_no_scale_fitting
+  fisheye: 5_unrectified_KB8_stereo_pairs_with_distortion_and_right_camera_yaw_metric_error_below_0_025_m
+  loop_and_merge: actual_synthetic_map_retrieval_geometric_verification_fusion_graph_and_BA
+  isolation: full_suite_passed_original_hidden_network_disabled_221_passed_5_optional_oracles_skipped
+remaining_validation:
+  - broader_identical_input_CPP_comparisons_all_sensor_and_camera_cases
+  - long_sequences_large_maps_and_difficult_inertial_observability
+  - inertial_image_loss_recovery_and_image_triggered_loops_merges
+  - continued_source_branch_coverage_review_no_numeric_fidelity_percentage_claim
+maintenance:
+  update_after_substantive_work: [AI_CONTEXT.yaml, COVERAGE.md, LOCAL_SETUP.md_inventory]
+  no_hidden_substitute_or_placeholder_algorithms: true
+  do_not_claim_whole_system_fidelity_from_interface_or_component_test_existence: true

@@ -1,0 +1,35 @@
+{
+  "baseline_commit": "4452a3c4ab75b1cde34e5505a36ec3f9edcdc4c4",
+  "generator": "tests/test_imu.py::_CPP_REFERENCE",
+  "generator_sha256": "41be7301759720580574b53baf13c0d5d90827e8c3c28d43a8f2f4e34541ea4d",
+  "sources": {
+    "src/ImuTypes.cc": "d33f157fea6efeefa5ba5ce43ee110e971ff08087f212de6a9fee1ea72dd3762",
+    "include/ImuTypes.h": "842567256c67feff8fc2235d303f9569617a000039b89f7253f81808dd300e85"
+  },
+  "fixture_sha256": "2c9c7f8b946d6f261f3951a74a33fca174d84515cd74d44d83f7ae313f660c9a",
+  "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "flags": [
+    "-std=c++17",
+    "-O0"
+  ],
+  "eigen": "3.4.0",
+  "source_scalar": "float32",
+  "python_scalar": "float64",
+  "measurement_count": 60,
+  "expected_order": [
+    "dt",
+    "dR.row_major",
+    "dV",
+    "dP",
+    "JRg.row_major",
+    "JVg.row_major",
+    "JVa.row_major",
+    "JPg.row_major",
+    "JPa.row_major",
+    "C.row_major",
+    "avgA",
+    "avgW"
+  ],
+  "output_precision_decimal_digits": 10,
+  "notes": "Unmodified original src/ImuTypes.cc compiled as test oracle; all synthetic inputs and expected outputs retained; no runtime C++ dependency."
+}

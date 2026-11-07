@@ -1,0 +1,12 @@
+{
+  "revision": "4452a3c4ab75b1cde34e5505a36ec3f9edcdc4c4",
+  "reference": "Original ORB-SLAM3 EdgeSE3ProjectXYZ/EdgeStereoSE3ProjectXYZ + g2o Eigen block-Schur solver, primary LocalBundleAdjustment single robust10-stage policy",
+  "graph": "Exact first Python RGBD image-pipeline LBA graph,750 features4 levels, physical TexturedPlanes generator,3 keyframes806 points1596 observations",
+  "source_sha256": {
+    "src/Optimizer.cc": "a1ab6e9eb182ed518902ea4fb4db2bd1afb87353f5c790f6989ff60569516261",
+    "src/OptimizableTypes.cpp": "53288e031c2e7f254e834139c820ff17384f97cf53a042deeb3f5e97b9b4c733",
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_levenberg.cpp": "dcb7768aa5c442c9092c431725d4d5f57089097490740ae3cd570e9976ebaf0e"
+  },
+  "fixture_sha256": "d23f75bd4f63d314b2e0227c8c4074b848d9d41bfd35b1589107fb0725a81d47",
+  "observation": "Both original C++ and Python deform final synthetic camera by~25mm while reducing this noisy short-baseline objective. This was verified rather than silently changing BA to match ground truth."
+}
